@@ -9,7 +9,7 @@
 
 <script>
 import Section1 from "@/components/Main/about_page/Section1.vue";
-import Section2 from "@/components/Main/about_page/Section2.vue";
+import Section2 from "@/components/Main/about_page/Vision.vue";
 import Section3 from "@/components/Main/about_page/Section3.vue";
 import Section4 from "@/components/Main/about_page/Section4.vue";
 
