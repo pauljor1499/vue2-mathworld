@@ -6,11 +6,11 @@
       </div>
       <div class="content-body">
         <p>
-          In MathWorld, we believe that every individual, regardless of age,
-          race and gender is gifted with an inherent talent to understand
-          mathematical ideas. With this belief as the cornerstone, we strive to
-          provide a learning environment where individual talents are identified
-          and nurtured to its full potential.
+          MathWorld is an educational entity that provides a modern platform for
+          test construction and test administration. It offers products and
+          services to educational institutions that prepare students for
+          standardized tests such as state mandated test, college admission test
+          and classroom tests.
         </p>
 
         <div class="items">
@@ -92,6 +92,7 @@
 
 .content .content-header {
   font-size: 1.2em;
+  text-align: center;
 }
 
 .content .content-body {
