@@ -14,6 +14,7 @@
 
                 <div>
                     <v-select
+                        id="select-role"
                         v-model="select"
                         :items="items"
                         :error-messages="selectErrors"
@@ -28,6 +29,7 @@
                     </v-select>
 
                     <v-text-field
+                        id="input-email"
                         v-model="email"
                         :error-messages="emailErrors"
                         label="E-mail"
@@ -39,6 +41,7 @@
                     ></v-text-field>
 
                     <v-text-field
+                        id="input-password"
                         v-model="password"
                         :error-messages="passwordErrors"
                         :append-icon="show_eye ? 'mdi-eye' : 'mdi-eye-off'"

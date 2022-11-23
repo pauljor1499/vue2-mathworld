@@ -11,22 +11,20 @@
             <router-link :to="'/'" class="nav-link">
                 <span>Home</span>
             </router-link>
-
             <router-link :to="'about'" class="nav-link">
                 <span>About</span>
             </router-link>
-
             <router-link :to="'community'" class="nav-link">
                 <span>Community</span>
             </router-link>
-
-            <v-btn class="ma-2" outlined color="#0091DE" large to="signin">
-                <span class="signin">Sign In</span>
-            </v-btn>
-
-            <v-btn color="#0091DE" large to="register">
-                <span class="register">Register</span>
-            </v-btn>
+            <div class="action-buttons">
+                <v-btn outlined color="primary" large to="signin">
+                    Sign In
+                </v-btn>
+                <v-btn color="primary" dark large to="register">
+                    Register
+                </v-btn>
+            </div>
         </div>
     </header>
 </template>
@@ -35,7 +33,6 @@
 * {
     text-decoration: none;
     list-style: none;
-    text-transform: initial;
 }
 
 header {
@@ -92,20 +89,17 @@ span {
     border-bottom: 3px solid #0091de;
 }
 
-.main-nav .v-btn {
-    margin: 5px;
-    padding: 20px;
+.action-buttons {
+    padding-left: 10px;
+    display: flex;
+    column-gap: 10px;
 }
 
-.main-nav .v-btn span {
+.v-btn {
+    text-transform: none;
+}
+
+.v-btn span {
     font-size: 1.2em;
-}
-
-.main-nav .v-btn span .signin {
-    color: #0091de;
-}
-
-.main-nav .v-btn span .register {
-    color: #ffff;
 }
 </style>
