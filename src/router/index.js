@@ -27,6 +27,10 @@ import SelectedAssignment from "@/components/Teacher/gradebook/assignments/main/
 import NewAssignment from "@/components/Teacher/gradebook/assignments/main/new_assignment/NewAssignment.vue";
 import UpdateAssignment from "@/components/Teacher/gradebook/assignments/main/update_assignment/UpdateAssignment.vue";
 
+//Student Pages
+import StudentPage from "@/views/Student/StudentPage.vue";
+import StudentDashboard from "@/components/Student/dashboard/MainPage.vue";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -140,6 +144,17 @@ const routes = [
                 alias: "*",
                 name: "TeacherNotFound",
                 component: TeacherNotFound,
+            },
+        ],
+    },
+
+    {
+        path: "/student",
+        component: StudentPage,
+        children: [
+            {
+                path: "",
+                component: StudentDashboard,
             },
         ],
     },

@@ -1,0 +1,3 @@
+<template>
+    <h1>Section 1</h1>
+</template>
