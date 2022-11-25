@@ -33,12 +33,15 @@
 
 .content {
     text-align: right;
+    margin-right: 50px;
+    margin-top: 100px;
 }
 
 .content .content-body {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    margin-left: 70px;
 }
 
 .main-content .image img {

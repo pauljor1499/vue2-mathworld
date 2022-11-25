@@ -7,13 +7,22 @@
                 <div><img src="@/assets/assets/team.png" alt="" /></div>
 
                 <div class="name">
-                    <p>John Doe</p>
-                    <p>Jane Doe</p>
-                    <p>Mark Doe</p>
+                    <div>
+                        <strong style="margin-left: 130px">JOHN DOE</strong>
+                        <p style="margin-left: 130px">Founder</p>
+                    </div>
+                    <div>
+                        <strong style="margin-left: 150px">JANET DOE</strong>
+                        <p style="margin-left: 130px">Marketing Head</p>
+                    </div>
+                    <div>
+                        <strong style="margin-left: 100px">MARK DOE</strong>
+                        <p style="margin-left: 70px">Supporting Manager</p>
+                    </div>
                 </div>
             </div>
 
-            <p>
+            <p class="message">
                 We are a company of teachers, administrators, students, parents
                 and educational researchers.
             </p>
@@ -44,17 +53,18 @@
     justify-content: center;
 }
 .image {
-    width: 100%;
-    margin-left: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 .name {
-    padding: 50px 0px 50px 0px;
-    width: 100%;
-    margin-left: 200px;
     display: flex;
+    text-transform: capitalize;
+    flex: 3;
     flex-direction: row;
-    row-gap: 20px;
-    column-gap: 280px;
-    text-transform: uppercase;
+    column-gap: 200px;
+}
+.message {
+    margin-top: 30px;
+    font-size: 18px;
 }
 </style>
