@@ -98,8 +98,4 @@ span {
 .v-btn {
     text-transform: none;
 }
-
-.v-btn span {
-    font-size: 1.2em;
-}
 </style>
