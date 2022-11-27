@@ -34,7 +34,6 @@ export default {
 #app {
     /* font-family: "Poppins", sans-serif; */
     font-family: "Lato", sans-serif;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--white-1);
