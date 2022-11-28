@@ -18,7 +18,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 40px 70px;
+    padding: 40px 5%;
     background-color: var(--blue-1);
 }
 
