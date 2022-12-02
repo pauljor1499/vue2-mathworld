@@ -1,9 +1,9 @@
 <template>
     <div class="main-content">
         <div class="content-item">
-            <span class="item-title"> Hi James! </span>
+            <span class="item-title"> Hi, James! </span>
             <span class="item-subtitle">
-                We are here to help you manage your classes
+                We are here to help you manage your classes.
             </span>
         </div>
         <div class="content-item">

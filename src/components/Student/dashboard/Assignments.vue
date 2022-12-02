@@ -1,133 +1,245 @@
 <template>
-    <v-card elevation="2" class="assignmentTable">
-        <div class="assignHeader">
-            <h1>Assignments</h1>
-        </div>
-        <div class="assignMain">
-            <div class="assignButtons">
-                <v-btn text
-                    ><span>New</span>
-                    <v-avatar color="#47CA7C" size="25" class="white--text"
-                        >3</v-avatar
-                    ></v-btn
+    <div class="main-content">
+        <div class="content-body">
+            <v-card elevation="1">
+                <v-toolbar
+                    color="var(--blue-1)"
+                    class="rounded-b-0"
+                    elevation="0"
                 >
-                <v-btn text
-                    ><span>Unsubmitted</span>
-                    <v-avatar color="#FF6D6D" size="25" class="white--text"
-                        >3</v-avatar
-                    >
-                </v-btn>
-            </div>
-            <div class="assignmentNew">
-                <v-data-table
-                    hide-default-footer
-                    :headers="headers"
-                    :items="assignmentsSubmitted"
-                    :items-per-page="5"
-                    :item-class="setRowStyle"
-                ></v-data-table>
-            </div>
+                    <span class="content-title">Assignments</span>
+                </v-toolbar>
+                <v-card-text class="body-items">
+                    <v-tabs v-model="tab">
+                        <v-tab>
+                            New <v-badge color="success" inline content="3" />
+                        </v-tab>
+                        <v-tab>
+                            Unsubmitted
+                            <v-badge color="error" inline content="8" />
+                        </v-tab>
+                    </v-tabs>
+                    <v-divider />
+                    <br />
+                    <v-tabs-items v-model="tab">
+                        <v-tab-item>
+                            <v-card flat>
+                                <v-data-table
+                                    :headers="today.headers"
+                                    :items="today.items"
+                                    :items-per-page="5"
+                                    class="elevation-1"
+                                />
+                            </v-card>
+                        </v-tab-item>
+                        <v-tab-item>
+                            <v-card flat>
+                                <v-data-table
+                                    :headers="all.headers"
+                                    :items="all.items"
+                                    :items-per-page="5"
+                                    class="elevation-1"
+                                />
+                            </v-card>
+                        </v-tab-item>
+                    </v-tabs-items>
+                </v-card-text>
+            </v-card>
         </div>
-    </v-card>
+    </div>
 </template>
 
 <script>
 export default {
     data() {
         return {
-            headers: [
-                {
-                    text: "Subject",
-                    align: "center",
-                    sortable: false,
-                    value: "subject",
-                },
-                { text: "Section", value: "section", align: "center" },
-                { text: "Instructor", value: "instructor", align: "center" },
-                { text: "Room Number", value: "roomNumber", align: "center" },
-                { text: "Time", value: "time", align: "center" },
-                { text: "Day", value: "day", align: "center" },
-            ],
-            assignmentsSubmitted: [
-                {
-                    subject: "Algebra 1",
-                    section: "Section 1",
-                    instructor: "Jose Rizal",
-                    roomNumber: 87,
-                    time: "8:00 am - 9:00 am",
-                    day: "M-W-F",
-                },
-                {
-                    subject: "Algebra 1",
-                    section: "Section 1",
-                    instructor: "Jose Rizal",
-                    roomNumber: 87,
-                    time: "8:00 am - 9:00 am",
-                    day: "M-W-F",
-                },
-                {
-                    subject: "Algebra 1",
-                    section: "Section 1",
-                    instructor: "Jose Rizal",
-                    roomNumber: 87,
-                    time: "8:00 am - 9:00 am",
-                    day: "M-W-F",
-                },
-            ],
+            tab: 0,
+            today: {
+                headers: [
+                    {
+                        text: "Subject",
+                        align: "start",
+                        sortable: false,
+                        value: "name",
+                    },
+                    {
+                        text: "Section",
+                        align: "start",
+                        sortable: false,
+                        value: "section",
+                    },
+                    {
+                        text: "Instructor",
+                        align: "start",
+                        sortable: false,
+                        value: "instructor",
+                    },
+
+                    {
+                        text: "Room Number",
+                        align: "start",
+                        sortable: false,
+                        value: "roomNumber",
+                    },
+                    {
+                        text: "Time",
+                        align: "start",
+                        sortable: false,
+                        value: "time",
+                    },
+                    {
+                        text: "Day",
+                        align: "start",
+                        sortable: false,
+                        value: "day",
+                    },
+                ],
+                items: [
+                    {
+                        name: "Algebra 1",
+                        section: "Section 1",
+                        instructor: "Jose Rizal",
+                        roomNumber: 87,
+                        time: "8:00am - 9:00am",
+                        day: "M-W-F",
+                    },
+                    {
+                        name: "Algebra 1",
+                        section: "Section 1",
+                        instructor: "Jose Rizal",
+                        roomNumber: 87,
+                        time: "8:00am - 9:00am",
+                        day: "M-W-F",
+                    },
+                    {
+                        name: "Algebra 1",
+                        section: "Section 1",
+                        instructor: "Jose Rizal",
+                        roomNumber: 87,
+                        time: "8:00am - 9:00am",
+                        day: "M-W-F",
+                    },
+                ],
+            },
+
+            all: {
+                headers: [
+                    {
+                        text: "Subject",
+                        align: "start",
+                        sortable: false,
+                        value: "name",
+                    },
+                    {
+                        text: "Section",
+                        align: "start",
+                        sortable: false,
+                        value: "section",
+                    },
+                    {
+                        text: "Instructor",
+                        align: "start",
+                        sortable: false,
+                        value: "instructor",
+                    },
+
+                    {
+                        text: "Room Number",
+                        align: "start",
+                        sortable: false,
+                        value: "roomNumber",
+                    },
+                    {
+                        text: "Time",
+                        align: "start",
+                        sortable: false,
+                        value: "time",
+                    },
+                    {
+                        text: "Day",
+                        align: "start",
+                        sortable: false,
+                        value: "day",
+                    },
+                ],
+                items: [
+                    {
+                        name: "Algebra 1",
+                        section: "Section 1",
+                        instructor: "Jose Rizal",
+                        roomNumber: 87,
+                        time: "8:00am - 9:00am",
+                        day: "M-W-F",
+                    },
+                    {
+                        name: "Algebra 1",
+                        section: "Section 1",
+                        instructor: "Jose Rizal",
+                        roomNumber: 87,
+                        time: "8:00am - 9:00am",
+                        day: "M-W-F",
+                    },
+                    {
+                        name: "Algebra 1",
+                        section: "Section 1",
+                        instructor: "Jose Rizal",
+                        roomNumber: 87,
+                        time: "8:00am - 9:00am",
+                        day: "M-W-F",
+                    },
+                    {
+                        name: "Algebra 1",
+                        section: "Section 1",
+                        instructor: "Jose Rizal",
+                        roomNumber: 87,
+                        time: "8:00am - 9:00am",
+                        day: "M-W-F",
+                    },
+                    {
+                        name: "Algebra 1",
+                        section: "Section 1",
+                        instructor: "Jose Rizal",
+                        roomNumber: 87,
+                        time: "8:00am - 9:00am",
+                        day: "M-W-F",
+                    },
+                    {
+                        name: "Algebra 1",
+                        section: "Section 1",
+                        instructor: "Jose Rizal",
+                        roomNumber: 87,
+                        time: "8:00am - 9:00am",
+                        day: "M-W-F",
+                    },
+                ],
+            },
         };
-    },
-    methods: {
-        setRowStyle(item) {
-            return "style-1";
-        },
     },
 };
 </script>
 
 <style scoped>
-.assignmentTable {
-    width: 1000px;
+* {
+    text-transform: none;
+}
+
+.main-content {
+    width: 100%;
+    padding: 0px 50px;
+}
+.content-body {
+    width: 80%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content-title {
+    font-size: 1.2em;
+    color: var(--white-1);
 }
 
-.assignHeader {
-    background-color: #0080c5;
-    padding: 15px 40px;
-}
-.assignHeader h1 {
-    font-size: 20px;
-    font-weight: lighter;
-    color: white;
-}
-.v-btn span {
-    text-transform: capitalize;
-    padding: 5px 0px;
-    margin-left: -15px;
-    padding-right: 5px;
-}
-.assignButtons {
-    margin: 15px 40px;
-    margin-top: 20px;
-    border-bottom: 1px solid gray;
-}
-.v-btn {
-    text-align: left;
-}
-
-table {
-    border-collapse: collapse !important;
-}
-table td,
-table th {
-    height: 40px !important;
-}
-.assignmentNew {
-    padding: 10px 40px;
-    padding-bottom: 30px;
-}
-.style-1 td {
-    height: 70px !important;
-    font-weight: 700;
-    color: #003754;
+.body-items {
+    padding: 20px 40px;
 }
 </style>

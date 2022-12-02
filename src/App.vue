@@ -16,6 +16,10 @@ export default {
 </script>
 
 <style>
+* {
+    text-transform: none;
+}
+
 :root {
     --red-1: #ffcdcd;
     --red-2: #ff2d2d;
@@ -28,6 +32,7 @@ export default {
     --white-1: #ffffff;
     --gray-1: #eeeeee;
     --gray-2: #727272;
+    --gray-3: #dddddd;
     --black-1: #000000;
 }
 

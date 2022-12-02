@@ -1,5 +1,5 @@
 <template>
-    <div class="main-content">
+    <div class="main-dashboard">
         <Header />
         <Section1 />
         <Schedules />
@@ -28,3 +28,11 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.main-dashboard {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+</style>
