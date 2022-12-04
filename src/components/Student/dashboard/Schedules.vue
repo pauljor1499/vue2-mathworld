@@ -12,11 +12,20 @@
                 <v-card-text class="body-items">
                     <v-tabs v-model="tab">
                         <v-tab>
-                            Today <v-badge color="success" inline content="3" />
+                            Today
+                            <v-badge
+                                color="success"
+                                inline
+                                :content="today.items.length"
+                            />
                         </v-tab>
                         <v-tab>
                             All
-                            <v-badge color="error" inline content="8" />
+                            <v-badge
+                                color="error"
+                                inline
+                                :content="all.items.length"
+                            />
                         </v-tab>
                     </v-tabs>
                     <v-divider />

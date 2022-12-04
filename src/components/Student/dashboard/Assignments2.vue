@@ -1,121 +1,208 @@
 <template>
-    <v-card elevation="2" class="assignmentTable">
-        <div class="assignHeader">
-            <h1>Assignments</h1>
-        </div>
-        <div class="assignMain">
-            <div class="assignButtons">
-                <v-btn text
-                    ><span>New</span>
-                    <v-avatar color="#47CA7C" size="25" class="white--text"
-                        >3</v-avatar
-                    ></v-btn
+    <div class="main-content">
+        <div class="content-body">
+            <v-card elevation="1">
+                <v-toolbar
+                    color="var(--blue-1)"
+                    class="rounded-b-0"
+                    elevation="0"
                 >
-                <v-btn text
-                    ><span>Unsubmitted</span>
-                    <v-avatar color="#FF6D6D" size="25" class="white--text"
-                        >3</v-avatar
-                    >
-                </v-btn>
-            </div>
-            <div class="assignmentNew">
-                <v-data-table
-                    hide-default-footer
-                    :headers="headers"
-                    :items="assignmentsSubmitted"
-                    :items-per-page="5"
-                    :item-class="setRowStyle"
-                ></v-data-table>
-            </div>
+                    <span class="content-title">Assignments</span>
+                </v-toolbar>
+                <v-card-text class="body-items">
+                    <v-tabs v-model="tab">
+                        <v-tab>
+                            New
+                            <v-badge
+                                color="success"
+                                inline
+                                :content="new_assignment.items.length"
+                            />
+                        </v-tab>
+                        <v-tab>
+                            Unsubmitted
+                            <v-badge
+                                color="error"
+                                inline
+                                :content="unsubmitted_assignment.items.length"
+                            />
+                        </v-tab>
+                    </v-tabs>
+                    <v-divider />
+                    <br />
+                    <v-tabs-items v-model="tab">
+                        <v-tab-item>
+                            <v-card flat>
+                                <v-data-table
+                                    :headers="new_assignment.headers"
+                                    :items="new_assignment.items"
+                                    :items-per-page="5"
+                                />
+                            </v-card>
+                        </v-tab-item>
+                        <v-tab-item>
+                            <v-card flat>
+                                <v-data-table
+                                    :headers="unsubmitted_assignment.headers"
+                                    :items="unsubmitted_assignment.items"
+                                    :items-per-page="5"
+                                />
+                            </v-card>
+                        </v-tab-item>
+                    </v-tabs-items>
+                </v-card-text>
+            </v-card>
         </div>
-    </v-card>
+    </div>
 </template>
 
 <script>
 export default {
     data() {
         return {
-            headers: [
-                {
-                    text: "Subject",
-                    align: "center",
-                    sortable: false,
-                    value: "subject",
-                },
-                { text: "Section", value: "section", align: "center" },
-                { text: "Instructor", value: "instructor", align: "center" },
-                { text: "Room Number", value: "roomNumber", align: "center" },
-                { text: "Time", value: "time", align: "center" },
-                { text: "Day", value: "day", align: "center" },
-            ],
-            assignmentsSubmitted: [
-                {
-                    subject: "Algebra 1",
-                    section: "Section 1",
-                    instructor: "Jose Rizal",
-                    roomNumber: 87,
-                    time: "8:00 am - 9:00 am",
-                    day: "M-W-F",
-                },
-                {
-                    subject: "Algebra 1",
-                    section: "Section 1",
-                    instructor: "Jose Rizal",
-                    roomNumber: 87,
-                    time: "8:00 am - 9:00 am",
-                    day: "M-W-F",
-                },
-                {
-                    subject: "Algebra 1",
-                    section: "Section 1",
-                    instructor: "Jose Rizal",
-                    roomNumber: 87,
-                    time: "8:00 am - 9:00 am",
-                    day: "M-W-F",
-                },
-            ],
+            tab: 0,
+            new_assignment: {
+                headers: [
+                    {
+                        text: "Title",
+                        align: "start",
+                        sortable: false,
+                        value: "title",
+                    },
+
+                    {
+                        text: "Subject",
+                        align: "start",
+                        sortable: false,
+                        value: "name",
+                    },
+
+                    {
+                        text: "Instructor",
+                        align: "start",
+                        sortable: false,
+                        value: "instructor",
+                    },
+                ],
+                items: [
+                    {
+                        title: "Assignment Title 1",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+                    {
+                        title: "Assignment Title 2",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+                    {
+                        title: "Assignment Title 3",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+                ],
+            },
+
+            unsubmitted_assignment: {
+                headers: [
+                    {
+                        text: "Title",
+                        align: "start",
+                        sortable: false,
+                        value: "title",
+                    },
+
+                    {
+                        text: "Subject",
+                        align: "start",
+                        sortable: false,
+                        value: "name",
+                    },
+
+                    {
+                        text: "Instructor",
+                        align: "start",
+                        sortable: false,
+                        value: "instructor",
+                    },
+                ],
+                items: [
+                    {
+                        title: "Assignment Title 1",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+                    {
+                        title: "Assignment Title 2",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+                    {
+                        title: "Assignment Title 3",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+
+                    {
+                        title: "Assignment Title 4",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+                    {
+                        title: "Assignment Title 5",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+                    {
+                        title: "Assignment Title 6",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+
+                    {
+                        title: "Assignment Title 7",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+                    {
+                        title: "Assignment Title 8",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+                    {
+                        title: "Assignment Title 9",
+                        name: "Algebra 1",
+                        instructor: "Jose Rizal",
+                    },
+                ],
+            },
         };
-    },
-    methods: {
-        setRowStyle(item) {
-            return "style-1";
-        },
     },
 };
 </script>
 
 <style scoped>
-.assignmentTable {
-    width: 1000px;
+* {
+    text-transform: none;
+}
+
+.main-content {
+    width: 100%;
+    padding: 0px 50px;
+}
+.content-body {
+    width: 80%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content-title {
+    font-size: 1.2em;
+    color: var(--white-1);
 }
 
-.assignHeader {
-    background-color: #0080c5;
-    padding: 15px 40px;
-}
-.assignHeader h1 {
-    font-size: 20px;
-    font-weight: lighter;
-    color: white;
-}
-.v-btn span {
-    text-transform: capitalize;
-    padding: 5px 0px;
-    margin-left: -15px;
-    padding-right: 5px;
-}
-.assignButtons {
-    margin: 15px 40px;
-    margin-top: 20px;
-    border-bottom: 1px solid gray;
-}
-.v-btn {
-    text-align: left;
-}
-
-.assignmentNew {
-    padding: 10px 40px;
-    padding-bottom: 30px;
+.body-items {
+    padding: 20px 40px;
 }
 </style>
