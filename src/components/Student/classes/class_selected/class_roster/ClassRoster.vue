@@ -1,5 +1,13 @@
 <template>
     <div class="class-roster-content">
+        <div class="content-title" style="color: var(--blue-1)">
+            <h2>All Students</h2>
+            <div>
+                {{ people.length + " students" }}
+            </div>
+        </div>
+        <br />
+        <br />
         <v-list v-for="(item, index) in people" :key="index" three-line>
             <v-list-item :key="index">
                 <v-list-item-avatar>
@@ -48,17 +56,17 @@ export default {
             },
 
             {
-                photo: "https://cdn.vuetifyjs.com/images/lists/6.jpg",
+                photo: "https://cdn.vuetifyjs.com/images/lists/5.jpg",
                 name: "Cedric Moran",
             },
 
             {
-                photo: "https://cdn.vuetifyjs.com/images/lists/7.jpg",
+                photo: "https://cdn.vuetifyjs.com/images/lists/5.jpg",
                 name: "Isai Page",
             },
 
             {
-                photo: "https://cdn.vuetifyjs.com/images/lists/8.jpg",
+                photo: "https://cdn.vuetifyjs.com/images/lists/5.jpg",
                 name: "Francisco Daniel",
             },
         ],
@@ -73,5 +81,10 @@ span {
 
 .class-roster-content {
     width: 100%;
+}
+
+.content-title {
+    display: flex;
+    justify-content: space-between;
 }
 </style>
