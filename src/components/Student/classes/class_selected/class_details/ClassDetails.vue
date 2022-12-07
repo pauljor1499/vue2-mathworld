@@ -1,7 +1,7 @@
 <template>
     <div class="class-details-content">
         <div class="content-title">
-            <h1>MySQL Database : Beginner SQL Database Design</h1>
+            <h1>Multi-step Equations and Inequalities</h1>
             <span> Algebra </span>
         </div>
         <br />
