@@ -23,42 +23,42 @@
                 <v-tab-item>
                     <v-col cols="4">
                         <v-select
+                            v-model="filter_text"
                             :items="filter"
                             dense
                             filled
                             outlined
-                            placeholder="Filter"
                         />
                     </v-col>
                     <v-col cols="12" class="all-classes">
                         <v-card
                             class="card"
                             hover
-                            v-for="(item, index) in all_classes"
+                            v-for="(item, index) in filter_results"
                             :key="index"
                         >
                             <v-card-text class="card-content">
                                 <div
                                     class="card-status-new"
-                                    v-if="item.status === 'new'"
+                                    v-if="item.status === 'New'"
                                 >
                                     NEW
                                 </div>
                                 <div
                                     class="card-status-done"
-                                    v-else-if="item.status === 'done'"
+                                    v-else-if="item.status === 'Done'"
                                 >
                                     DONE
                                 </div>
                                 <div
                                     class="card-status-closed"
-                                    v-else-if="item.status === 'closed'"
+                                    v-else-if="item.status === 'Closed'"
                                 >
                                     CLOSED
                                 </div>
                                 <div
                                     class="card-status-unsubmitted"
-                                    v-else-if="item.status === 'unsubmitted'"
+                                    v-else-if="item.status === 'Unsubmitted'"
                                 >
                                     <span>UNSUB</span>
                                 </div>
@@ -108,36 +108,74 @@ export default {
 
             filter: ["All", "New", "Done", "Closed", "Unsubmitted"],
 
+            filter_text: "All",
+
             all_classes: [
                 {
-                    status: "new",
+                    status: "New",
                     title: "Implicit Differentiation (Level 1)",
                     description: "Assignment 1",
                     due: "Due: November 04, 2022 8:00 pm",
                 },
 
                 {
-                    status: "done",
+                    status: "New",
                     title: "Implicit Differentiation (Level 1)",
                     description: "Assignment 1",
                     due: "Due: November 04, 2022 8:00 pm",
                 },
 
                 {
-                    status: "closed",
+                    status: "Done",
                     title: "Implicit Differentiation (Level 1)",
                     description: "Assignment 1",
                     due: "Due: November 04, 2022 8:00 pm",
                 },
 
                 {
-                    status: "unsubmitted",
+                    status: "Done",
+                    title: "Implicit Differentiation (Level 1)",
+                    description: "Assignment 1",
+                    due: "Due: November 04, 2022 8:00 pm",
+                },
+
+                {
+                    status: "Done",
+                    title: "Implicit Differentiation (Level 1)",
+                    description: "Assignment 1",
+                    due: "Due: November 04, 2022 8:00 pm",
+                },
+
+                {
+                    status: "Closed",
+                    title: "Implicit Differentiation (Level 1)",
+                    description: "Assignment 1",
+                    due: "Due: November 04, 2022 8:00 pm",
+                },
+
+                {
+                    status: "Unsubmitted",
                     title: "Implicit Differentiation (Level 1)",
                     description: "Assignment 1",
                     due: "Due: November 04, 2022 8:00 pm",
                 },
             ],
         };
+    },
+
+    computed: {
+        filter_results() {
+            var arr = [];
+            for (var index in this.all_classes) {
+                if (this.all_classes[index].status === this.filter_text) {
+                    arr.push(this.all_classes[index]);
+                }
+            }
+            if (this.filter_text === "All") {
+                return this.all_classes;
+            }
+            return arr;
+        },
     },
 };
 </script>
