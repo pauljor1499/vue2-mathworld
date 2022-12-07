@@ -29,6 +29,8 @@ import UpdateAssignment from "@/components/Teacher/gradebook/assignments/main/up
 
 //Student Pages
 import StudentPage from "@/views/Student/StudentPage.vue";
+import StudentClasses from "@/components/Student/classes/Classes.vue";
+import StudentClassSelected from "@/components/Student/classes/class_selected/ClassSelected.vue";
 import StudentDashboard from "@/components/Student/dashboard/MainPage.vue";
 
 Vue.use(VueRouter);
@@ -154,6 +156,17 @@ const routes = [
         children: [
             {
                 path: "",
+                component: StudentClasses,
+            },
+
+            {
+                path: ":class_name",
+                name: "StudentClassSelected",
+                component: StudentClassSelected,
+            },
+
+            {
+                path: "dashboard",
                 component: StudentDashboard,
             },
         ],

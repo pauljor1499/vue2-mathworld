@@ -15,6 +15,9 @@
 
         <div class="main-nav">
             <router-link :to="'/student'" class="nav-link">
+                <span>Classes</span>
+            </router-link>
+            <router-link :to="'/student/dashboard'" class="nav-link">
                 <span>Dashboard</span>
             </router-link>
             <router-link :to="'/student/schedules'" class="nav-link">
