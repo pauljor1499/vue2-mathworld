@@ -23,6 +23,9 @@
                 <v-tab-item>
                     <Assignments />
                 </v-tab-item>
+                <v-tab-item>
+                    <ClassRoster />
+                </v-tab-item>
             </v-tabs-items>
         </div>
     </div>
@@ -30,10 +33,12 @@
 
 <script>
 import Assignments from "./assignments/Assignments.vue";
+import ClassRoster from "./class_roster/ClassRoster.vue";
 
 export default {
     components: {
         Assignments,
+        ClassRoster,
     },
 
     data() {

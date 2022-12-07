@@ -147,6 +147,10 @@ export default {
 </script>
 
 <style scoped>
+.assignment-content {
+    width: 100%;
+}
+
 .all-classes {
     display: flex;
     flex-direction: column;
